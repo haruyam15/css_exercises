@@ -1,0 +1,77 @@
+@import '/path/to/reset-css/reset.css';
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+html,body{width: 100%;background-color:#262626;}
+#wrap{width:100%;color:#fff}
+#wrap .wrap_inner{max-width: 1600px;margin: 0 auto;padding-bottom: 50px;}
+
+#wrap header{text-align: center;padding:4em 2em;}
+#wrap header h1{font-size: 3.2em;font-weight: bold;}
+#wrap header p{width:50%;margin: 1em auto 0;line-height:1.5em}
+
+#wrap main{display: flex;padding:0 10%}
+#wrap main section{flex:1;padding:20px}
+
+/* section.left */
+#wrap main .left ul li:not(.sns){display: flex;margin-bottom:2.5em;}
+#wrap main .left ul li:not(.sns) dl{margin-left: 15px;}
+#wrap main .left ul li:not(.sns) dl dt{color:#4edecb;font-weight: bold;margin-bottom: 4px;}
+#wrap main .left ul li:not(.sns) dl dd{line-height: 1.2em;}
+
+#wrap main .left ul li.sns dl{padding-top: 20px;}
+#wrap main .left ul li.sns dl dt{position:relative;padding-left:35px}
+#wrap main .left ul li.sns dl dt::before{content: "";display: block;width: 30px;height: 90%;position: absolute;top:-1px;left:0;background-color: #4edecb;}
+#wrap main .left ul li.sns dl dd{display: flex;justify-content: flex-start;gap: 1em;margin-top: 1.3em;font-size: 1.2em;}
+
+/* 아이콘 박스 & 보더효과 */
+#wrap main .left ul li .icon_wrap{widht:100%;height:100%;display: flex;align-items: center;justify-content: center;background: #4edecb;}
+#wrap main .left ul li .icon_wrap i{color: #262626;}
+#wrap main .left ul li .icon_border{position:relative;width: 30px;height:30px;padding:4px;border:1px solid #4edecb;}
+#wrap main .left ul li .icon_border span{position:absolute;background:#262626;}
+#wrap main .left ul li .icon_border span:nth-child(1){width:20px;height:1px;top: -1px;left: 9px;}
+#wrap main .left ul li .icon_border span:nth-child(2){width:20px;height:1px;bottom: -1px;left: 9px;}
+#wrap main .left> ul li .icon_border span:nth-child(3){width:1px;height:20px;top:9px;left:-1px}
+#wrap main .left ul li .icon_border span:nth-child(4){width:1px;height:20px;top:9px;right:-1px}
+/* 아이콘 박스 보더효과 -END- */
+
+
+
+/* right */
+#wrap main .right{position:relative;}
+#wrap main .right>div{background:#3a3a3a;padding:2em;}
+#wrap main .right>div h2{font-size:2em;margin-bottom: 20px;}
+
+#wrap main .right>div ul{}
+#wrap main .right>div ul li{margin-bottom: 40px;}
+#wrap main .right>div ul li label{color:#4edecb;}
+#wrap main .right>div ul li input{display: block;background:none;border:none;border-bottom:1px solid #4edecb;width: 100%;height: 100%;padding:5px 0;margin-top: 6px;color: #fff;font-size: 1em;}
+#wrap main .right>div ul li input::placeholder{color:#ffffff45}
+
+#wrap main .right>div button{display: block;width: 70px;height: 35px;background: #48cfbd;color: #262626;border: none;cursor: pointer;}
+
+/* 애니메이션 수정 예정 */
+#wrap main .right p{position: absolute;background: #4edecb;}
+#wrap main .right p:nth-child(1){top:0;left: 50%;width: 30%;height: 2px;margin-left:-15%}
+#wrap main .right p:nth-child(2){bottom:0;left: 50%;width: 30%;height: 2px;margin-left: -15%;}
+#wrap main .right p:nth-child(3){top:50%;left: 0;width: 2px;height: 40%;margin-top:-15%}
+#wrap main .right p:nth-child(4){top:50%;right: 0;width: 2px;height: 40%;margin-top: -15%;}
+
+@media only screen and (max-width: 900px) {
+    #wrap header p{width: 100%;;font-size: 1em;}
+
+    #wrap main{flex-direction: column;}
+    #wrap main section{margin-bottom:40px}
+
+    #wrap main .left ul li:not(.sns){font-size: 1.3em;}
+    #wrap main .left ul li.sns dl dt{font-size: 1.3em;}
+    #wrap main .left ul li.sns dl dd{font-size: 1.5em;margin-top:1em}
+    
+
+    
+}
