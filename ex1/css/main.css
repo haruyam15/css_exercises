@@ -1,0 +1,99 @@
+@import '/path/to/reset-css/reset.css';
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+html,body{width: 100%;background-color:#262626;}
+#wrap{width:100%;color:#fff}
+#wrap .wrap_inner{max-width: 1600px;margin: 0 auto;padding-bottom: 50px;}
+
+#wrap header{text-align: center;padding:4em 2em;}
+#wrap header h1{font-size: 3.2em;font-weight: bold;}
+#wrap header p{width:50%;margin: 1em auto 0;line-height:1.5em}
+
+#wrap main{display: flex;padding:0 10%}
+main section{flex:1;}
+
+/* section.left */
+main .left{padding:20px}
+main .left ul li:not(.sns){display: flex;margin-bottom:2.5em;}
+main .left ul li:not(.sns) dl{margin-left: 15px;}
+main .left ul li:not(.sns) dl dt{color:#4edecb;font-weight: bold;margin-bottom: 4px;}
+main .left ul li:not(.sns) dl dd{line-height: 1.2em;}
+
+main .left ul li.sns dl{padding-top: 20px;}
+main .left ul li.sns dl dt{position:relative;padding-left:35px}
+main .left ul li.sns dl dt::before{content: "";display: block;width: 30px;height: 90%;position: absolute;top:-1px;left:0;background-color: #4edecb;}
+main .left ul li.sns dl dd{display: flex;justify-content: flex-start;gap: 1em;margin-top: 1.3em;font-size: 1.3em;}
+main .left ul li.sns dl dd i:hover{cursor: pointer;color:#48cfbd;transition: .3s linear;text-shadow: #48cfbd 1px 0 10px;}
+
+/* 아이콘 박스 & 보더효과 */
+main .left ul li .icon_wrap{width:100%;height:100%;display: flex;align-items: center;justify-content: center;background: #4edecb;color: #262626;}
+main .left ul li .icon_border{position:relative;width: 30px;height:30px;padding:4px;border:1px solid #4edecb;cursor: pointer;}
+main .left ul li .icon_border span{position:absolute;display: block;border:1px solid #262626;border-width: 1px 0px;width:20px;height:38px;top: -1px;left: 9px;}
+main .left ul li .icon_border span:nth-child(2){transform: rotate(90deg);}
+/* 아이콘 박스 보더효과 -END- */
+
+
+
+/* right */
+main .right{position:relative;padding:20px;overflow: hidden;}
+main .right .form_message{position: relative;z-index: 1;background:#3a3a3a;padding:2em;}
+main .right .form_message h2{font-size:2em;margin-bottom: 40px;}
+
+main .right .form_message ul{}
+main .right .form_message ul li{position: relative;margin-bottom: 40px;}
+main .right .form_message ul li label{position:absolute;top:4px;left:0;color:#fff;transition: .5s ease-out;}
+main .right .form_message ul li input{display: block;background:none;border:none;border-bottom:1px solid #4edecb;width: 100%;height: 100%;padding:5px 0;margin-top: 6px;color: #fff;font-size: 1em;}
+main .right .form_message ul li:not(:has(input:placeholder-shown)) label, main .right .form_message ul li:has(input:focus) label{top:-18px;color:#48cfbd;font-size: .9em;}
+
+main .right .form_message button{display: block;width: 70px;height: 35px;background: #48cfbd;color: #262626;border: none;cursor: pointer;}
+
+/* 애니메이션 수정 예정 */
+main .right .ani_box{position:absolute;top:0;left:0;width:100%;height:100%;border:2px solid #4edecb;box-sizing: border-box;}
+main .right .ani_box p{position: absolute;background: #262626;animation-iteration-count: infinite;animation-timing-function: linear;animation-duration: 2.5s;}
+main .right .ani_box p.ani_top{top:-5px;left: 0;width: 50%;height: 10px;animation-name: top;}
+main .right .ani_box p.ani_right{top:0;right: -5px;width: 10px;height: 50%;animation-name: right;animation-delay: 2.5s;}
+main .right .ani_box p.ani_bottom{bottom:-5px;right: 0;width: 50%;height: 10px;animation-name: bottom;}
+main .right .ani_box p.ani_left{bottom:0;left: -5px;width: 10px;height: 50%;animation-name: left;}
+
+main .right .ani_box p.ani_top.sec{left:-50%}
+main .right .ani_box p.ani_right.sec{top:-50%;}
+main .right .ani_box p.ani_bottom.sec{right:-50%}
+main .right .ani_box p.ani_left.sec{bottom:-50%;}
+
+main .right .ani_box p.sec{background-color: #262626 ;animation-delay: .8s;}
+
+
+@media only screen and (max-width: 900px) {
+    header p{width: 100%;font-size: 1em;}
+    main{flex-direction: column;}
+    main section{margin-bottom:40px}
+    main .left ul li.sns dl dd{margin-top:1em}
+}
+
+
+/* 애니메이션 */
+@keyframes top {
+    0%   {left:-50%;}
+    100% {left:100%;}
+}
+
+@keyframes bottom {
+    0%   {right:-50%;}
+    100% {right:100%;}
+}
+
+@keyframes left {
+    0%   {bottom:-50%;}
+    100% {bottom:100%;}
+}
+
+@keyframes right {
+    0%   {top:-50%;}
+    100% {top:100%;}
+}
