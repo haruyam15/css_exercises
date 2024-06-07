@@ -1,3 +1,5 @@
+🚧 아직 공사중 입니다. 🚧
+
 # ex1
 ### https://css-exercises.netlify.app/ex1
 <img src="https://github.com/haruyam15/contact_us_sample/assets/110523397/ec0dedcf-090f-49ce-ae0b-6f8c943dc4fc" width="600" />
